@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Define directories to be created
+DIRECTORIES=(
+  "./src/controllers"
+  "./src/models"
+  "./src/routes"
+  "./src/middlewares"
+  "./src/types"
+  "./src/utils"
+  "./test"
+)
+
+# Define files to be created
+FILES=(
+  "./src/controllers/authController.ts"
+  "./src/controllers/userController.ts"
+  "./src/models/userModel.ts"
+  "./src/routes/authRoutes.ts"
+  "./src/routes/userRoutes.ts"
+  "./src/middlewares/authMiddleware.ts"
+  "./src/utils/dbConnect.ts"
+  "./src/index.ts"
+  "./.gitignore"
+  "./.env"
+  "./.env.example"
+  "./.eslintrc.json"
+  "./.prettierrc"
+  "./.prettierignore"
+  "./Dockerfile"
+)
+
+# Create directories
+for DIRECTORY in "${DIRECTORIES[@]}"; do
+  mkdir -p "$DIRECTORY"
+done
+
+# Create files
+for FILE in "${FILES[@]}"; do
+  touch "$FILE"
+done
+
+echo "Directories and files created successfully."
